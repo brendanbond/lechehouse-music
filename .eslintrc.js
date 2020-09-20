@@ -13,6 +13,9 @@ module.exports = {
     'prettier/@typescript-eslint',
     'prettier/react',
     'plugin:prettier/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
   globals: {
     Atomics: 'readonly',
@@ -60,6 +63,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { ignoreRestSiblings: true }],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-console': 1,
     'react/prop-types': 'off',
     'import/prefer-default-export': 'off',
@@ -90,6 +94,11 @@ module.exports = {
     react: {
       pragma: 'React',
       version: 'detect',
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
   },
 };
