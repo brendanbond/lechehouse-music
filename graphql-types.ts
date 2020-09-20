@@ -2484,10 +2484,7 @@ export type DiscogQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DiscogQuery = { allImageSharp: { nodes: Array<(
       Pick<ImageSharp, 'id'>
-      & { fixed?: Maybe<(
-        Pick<ImageSharpFixed, 'originalName'>
-        & GatsbyImageSharpFixed_WithWebpFragment
-      )> }
+      & { fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }
     )> } };
 
 export type GearFiveQueryVariables = Exact<{ [key: string]: never; }>;
