@@ -12,6 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap"
         />
+        <title>Lechehouse Music | Home</title>
       </Helmet>
       <Box
         maxWidth="full"
