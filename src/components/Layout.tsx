@@ -13,7 +13,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap"
         />
       </Helmet>
-      <Box maxWidth="full" margin="136px auto 0 auto" padding="0 24px">
+      <Box
+        maxWidth="full"
+        margin={{ base: '92px auto 0 auto', lg: '136px auto 0 auto' }}
+        padding="0 24px"
+      >
         {children}
       </Box>
       <Header />

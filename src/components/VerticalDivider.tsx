@@ -6,18 +6,23 @@ const VerticalDivider = ({
   color,
   width,
 }: {
-  height: string;
+  height:
+    | string
+    | {
+        [x: string]: string | number | undefined;
+        [x: number]: string | number | undefined;
+      };
   color: string;
   width: string;
 }) => (
   <Box
     as="span"
-    display="inline-block"
     margin="0 30px"
     borderColor={color}
     height={height}
     borderWidth={width}
     borderRadius="2px"
+    display={{ base: 'none', lg: 'inline-block' }}
   />
 );
 

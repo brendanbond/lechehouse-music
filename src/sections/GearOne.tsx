@@ -8,23 +8,23 @@ import SimpleList from '../components/SimpleList';
 const GearOne = () => {
   const gearOneData = useStaticQuery<GatsbyTypes.GearOneQuery>(graphql`
     query GearOne {
-      gearOneContent: imageSharp(
-        fluid: { originalName: { eq: "gear_content_1.jpg" } }
-      ) {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
+      gearOneContent: file(relativePath: { eq: "gear_content_1.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
         }
       }
     }
   `);
 
   return (
-    <Fade direction="right" triggerOnce fraction={0.1}>
+    <Fade triggerOnce>
       <SectionContentRegion
         leftToRight={true}
-        image={gearOneData.gearOneContent.fluid}
+        image={gearOneData?.gearOneContent?.childImageSharp?.fluid}
         borderColor="betoOrange"
-        borderHeight="360px"
+        borderLength={{ base: '200px', lg: '360px' }}
       >
         <SimpleList>
           <li>Tascam 388 - 8 Track 1/4&quot; Tape Recorder</li>

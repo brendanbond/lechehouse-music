@@ -1,14 +1,9 @@
 import React from 'react';
-import { Box, Heading, Flex } from '@chakra-ui/core';
+import { Box, Flex } from '@chakra-ui/core';
 
 import Brand from '../Brand';
 import MaskingTape from '../../assets/images/header_masking_tape.png';
-
-const MenuItems = ({ children }: { children: React.ReactNode }) => (
-  <Heading fontSize="xl" mt={{ base: 4, lg: 0 }} display="block" opacity={0.85}>
-    {children}
-  </Heading>
-);
+import MenuItems from './MenuItems';
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
@@ -59,10 +54,18 @@ const Header = () => {
           backgroundImage={{ base: '', lg: `url(${MaskingTape})` }}
           backgroundRepeat="no-repeat"
         >
-          <MenuItems>ABOUT</MenuItems>
-          <MenuItems>GEAR</MenuItems>
-          <MenuItems>DISCOG</MenuItems>
-          <MenuItems>BOOKING</MenuItems>
+          <MenuItems to="about" onMenuItemClick={() => setShow(false)}>
+            ABOUT
+          </MenuItems>
+          <MenuItems to="gear" onMenuItemClick={() => setShow(false)}>
+            GEAR
+          </MenuItems>
+          <MenuItems to="discog" onMenuItemClick={() => setShow(false)}>
+            DISCOG
+          </MenuItems>
+          <MenuItems to="booking" onMenuItemClick={() => setShow(false)}>
+            BOOKING
+          </MenuItems>
         </Box>
       </Flex>
     </Box>

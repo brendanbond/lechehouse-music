@@ -1,29 +1,56 @@
 import React from 'react';
-import { Flex, FormControl, FormLabel, Input, Textarea } from '@chakra-ui/core';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Textarea,
+  Button,
+} from '@chakra-ui/core';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Fade } from 'react-awesome-reveal';
+
+import SectionContentRegion from '../components/SectionContentRegion';
 
 const Booking = () => {
+  const imageData = useStaticQuery<GatsbyTypes.BookingQuery>(graphql`
+    query Booking {
+      bookingContent: file(relativePath: { eq: "booking_content.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
   return (
-    <Flex
-      justifyContent="center"
-      alignItems="center"
-      width="100%"
-      height="calc(100vh - 136px)"
-    >
-      <form>
-        <FormControl>
-          <FormLabel htmlFor="name">Name</FormLabel>
-          <Input id="name" placeholder="First name" />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel htmlFor="email">Email</FormLabel>
-          <Input id="email" placeholder="Email" />
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel htmlFor="message">Message</FormLabel>
-          <Textarea id="message" placeholder="Get in touch..." />
-        </FormControl>
-      </form>
-    </Flex>
+    <Fade triggerOnce>
+      <SectionContentRegion
+        leftToRight={true}
+        image={imageData?.bookingContent?.childImageSharp?.fluid}
+        borderColor="betoBlue"
+        borderLength={{ base: '200px', lg: '350px' }}
+      >
+        <form>
+          <FormControl marginBottom="10px">
+            <FormLabel htmlFor="name">Name</FormLabel>
+            <Input id="name" placeholder="Name" />
+          </FormControl>
+          <FormControl marginBottom="10px" isRequired>
+            <FormLabel htmlFor="email">Email</FormLabel>
+            <Input id="email" placeholder="Email" />
+          </FormControl>
+          <FormControl marginBottom="10px" isRequired>
+            <FormLabel htmlFor="message">Message</FormLabel>
+            <Textarea id="message" placeholder="Get in touch..." />
+          </FormControl>
+          <Button variantColor="gray" type="submit">
+            Submit
+          </Button>
+        </form>
+      </SectionContentRegion>
+    </Fade>
   );
 };
 

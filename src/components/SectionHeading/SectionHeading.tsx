@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Box, Heading } from '@chakra-ui/core';
 import styled from '@emotion/styled';
-import Image, { FluidObject } from 'gatsby-image';
+import Image from 'gatsby-image';
 
 import MaskingTape from '../../assets/images/section_header_vertical_masking_tape.png';
 
@@ -17,15 +17,19 @@ const SectionHeading = ({
   title,
   leftToRight,
 }: {
-  image: FluidObject;
+  image: NonNullable<
+    NonNullable<GatsbyTypes.HomePageQuery['aboutHeader']>['childImageSharp']
+  >['fluid'];
   title: string;
   leftToRight: boolean;
 }) => {
+  if (!image) return <div />;
   return (
     <Flex
       alignItems="center"
-      height="calc(100vh - 136px)"
+      height={{ base: 'calc(100vh - 92px)', lg: 'calc(100vh - 136px)' }}
       flexDirection={leftToRight ? 'row' : 'row-reverse'}
+      display={{ base: 'none', lg: 'flex' }}
     >
       <Box
         bgImage={`url(${MaskingTape})`}
@@ -36,7 +40,9 @@ const SectionHeading = ({
         margin={leftToRight ? '0 30px 0 0' : '0 0 0 30px'}
       >
         <UprightTextBox position="absolute" top="20%" left="15%" opacity={0.8}>
-          <Heading lineHeight={1.5}>{title}</Heading>
+          <Heading fontSize="3xl" lineHeight={1.5}>
+            {title}
+          </Heading>
         </UprightTextBox>
       </Box>
       <Box width="100%" maxHeight="100%" height="400px">
