@@ -24,7 +24,6 @@ const Discog = () => {
       }
     }
   `);
-  console.log(discogData.allFile.nodes);
   return (
     <Fade triggerOnce>
       <Flex

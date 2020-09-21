@@ -12,7 +12,7 @@ const useMediaQuery = (mediaQuery: string) => {
     const mediaQueryList = window.matchMedia(mediaQuery);
     const documentChangeHandler = () => setIsVerified(!!mediaQueryList.matches);
 
-    mediaQueryList.addEventListener('change', () => documentChangeHandler);
+    mediaQueryList.addEventListener('change', documentChangeHandler);
 
     documentChangeHandler();
     return () => {

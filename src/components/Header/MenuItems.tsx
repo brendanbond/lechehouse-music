@@ -14,13 +14,15 @@ const MenuItems = ({
   onMenuItemClick: () => void;
 }) => {
   const isSmallScreenWidth = useMediaQuery('(max-width: 768px)');
+  const offset = isSmallScreenWidth ? -92 : -136;
+  console.log('[offset]', offset);
   const handleClick = () => {
     onMenuItemClick();
     scroller.scrollTo(to, {
       duration: 1500,
       delay: 100,
       smooth: true,
-      offset: isSmallScreenWidth ? -92 : -136,
+      offset,
     });
   };
 
