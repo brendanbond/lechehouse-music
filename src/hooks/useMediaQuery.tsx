@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const isBuilding = typeof window === 'undefined';
 
@@ -8,16 +8,20 @@ const useMediaQuery = (mediaQuery: string) => {
     return !!window.matchMedia(mediaQuery).matches;
   });
 
-  useLayoutEffect(() => {
-    const mediaQueryList = window.matchMedia(mediaQuery);
-    const documentChangeHandler = () => setIsVerified(!!mediaQueryList.matches);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const mediaQueryList = window.matchMedia(mediaQuery);
+      const documentChangeHandler = () =>
+        setIsVerified(!!mediaQueryList.matches);
 
-    mediaQueryList.addEventListener('change', documentChangeHandler);
+      mediaQueryList.addEventListener('change', documentChangeHandler);
 
-    documentChangeHandler();
-    return () => {
-      mediaQueryList.removeEventListener('change', documentChangeHandler);
-    };
+      documentChangeHandler();
+      return () => {
+        mediaQueryList.removeEventListener('change', documentChangeHandler);
+      };
+    }
+    return undefined;
   }, [mediaQuery]);
 
   return isVerified;
