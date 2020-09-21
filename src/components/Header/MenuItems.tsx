@@ -15,7 +15,6 @@ const MenuItems = ({
 }) => {
   const isSmallScreenWidth = useMediaQuery('(max-width: 768px)');
   const offset = isSmallScreenWidth ? -92 : -136;
-  console.log('[offset]', offset);
   const handleClick = () => {
     onMenuItemClick();
     scroller.scrollTo(to, {

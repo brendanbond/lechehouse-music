@@ -36,7 +36,6 @@ const Discog = () => {
         {discogData.allFile.nodes.map((imageNode) => {
           if (!imageNode?.childImageSharp?.fluid)
             throw new Error(`Image query for discog images failed`);
-          console.log(imageNode);
           return (
             <Box
               width={{ base: '65%', md: '35%', lg: '170px' }}
