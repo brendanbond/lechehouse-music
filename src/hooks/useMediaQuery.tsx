@@ -14,11 +14,11 @@ const useMediaQuery = (mediaQuery: string) => {
       const documentChangeHandler = () =>
         setIsVerified(!!mediaQueryList.matches);
 
-      mediaQueryList.addEventListener('change', documentChangeHandler);
+      mediaQueryList.addListener(documentChangeHandler);
 
       documentChangeHandler();
       return () => {
-        mediaQueryList.removeEventListener('change', documentChangeHandler);
+        mediaQueryList.removeListener(documentChangeHandler);
       };
     }
     return undefined;
