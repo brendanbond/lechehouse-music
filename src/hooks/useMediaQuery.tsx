@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 const isBuilding = typeof window === 'undefined';
 
@@ -8,7 +8,7 @@ const useMediaQuery = (mediaQuery: string) => {
     return !!window.matchMedia(mediaQuery).matches;
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const mediaQueryList = window.matchMedia(mediaQuery);
     const documentChangeHandler = () => setIsVerified(!!mediaQueryList.matches);
 
