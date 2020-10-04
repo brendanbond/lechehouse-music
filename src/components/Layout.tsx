@@ -6,7 +6,7 @@ import Header from './Header';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div id="lechehouse-content">
+    <Box id="lechehouse-content" backgroundColor="#fff1de">
       <Helmet>
         <link
           rel="stylesheet"
@@ -14,6 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         />
         <title>Lechehouse Music | Home</title>
       </Helmet>
+
       <Box
         maxWidth="full"
         margin={{ base: '92px auto 0 auto', lg: '136px auto 0 auto' }}
@@ -22,7 +23,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </Box>
       <Header />
-    </div>
+    </Box>
   );
 };
 

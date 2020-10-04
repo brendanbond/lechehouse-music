@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'FG-Klara';
-  src:url('FG-Klara.ttf.woff') format('woff'),
-      url('FG-Klara.ttf.svg#FG-Klara') format('svg'),
-      url('FG-Klara.ttf.eot'),
-      url('FG-Klara.ttf.eot?#iefix') format('embedded-opentype'); 
-  font-weight: normal;
-  font-style: normal;
-}

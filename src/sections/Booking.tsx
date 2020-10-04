@@ -14,7 +14,7 @@ import SectionContentRegion from '../components/SectionContentRegion';
 const Booking = () => {
   const imageData = useStaticQuery<GatsbyTypes.BookingQuery>(graphql`
     query Booking {
-      bookingContent: file(relativePath: { eq: "booking_content.jpg" }) {
+      bookingContent: file(relativePath: { eq: "booking_logo.png" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid_withWebp

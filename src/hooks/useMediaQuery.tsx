@@ -14,7 +14,7 @@ const useMediaQuery = (mediaQuery: string) => {
       const documentChangeHandler = () =>
         setIsVerified(!!mediaQueryList.matches);
 
-      mediaQueryList.addListener(documentChangeHandler);
+      mediaQueryList.addListener(documentChangeHandler); // TODO: move from deprecated once this bug (https://stackoverflow.com/questions/56466261/matchmedia-addlistener-marked-as-deprecated-addeventlistener-equivalent) is fixed
 
       documentChangeHandler();
       return () => {

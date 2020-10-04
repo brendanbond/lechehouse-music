@@ -29,7 +29,7 @@ const MenuItems = ({
     <Heading
       userSelect="none"
       cursor="pointer"
-      fontSize="xl"
+      fontSize="2xl"
       mt={{ base: 4, lg: 0 }}
       display="block"
       opacity={0.85}

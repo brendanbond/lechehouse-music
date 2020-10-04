@@ -1,6 +1,6 @@
-import { theme, ITheme } from '@chakra-ui/core';
+import { theme } from '@chakra-ui/core';
 
-import './src/assets/fonts/fg-klara/styles.css';
+import './src/assets/fonts/speedy-marker/stylesheet.css';
 
 export default {
   ...theme,
@@ -12,7 +12,7 @@ export default {
   },
   fonts: {
     ...theme.fonts,
-    heading: `'FG-Klara', ${theme.fonts.heading}`,
+    heading: `'speedy_markerregular', ${theme.fonts.heading}`,
     body: `'Kumbh Sans', ${theme.fonts.body}`,
   },
   sizes: {
