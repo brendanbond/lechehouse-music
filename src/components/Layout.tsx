@@ -6,7 +6,7 @@ import Header from './Header';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Box id="lechehouse-content" backgroundColor="#fff1de">
+    <Box id="lechehouse-content">
       <Helmet>
         <link
           rel="stylesheet"
