@@ -2520,14 +2520,14 @@ type GearOneQueryVariables = Exact<{ [key: string]: never; }>;
 
 type GearOneQuery = { readonly gearOneContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
-type GearTwoQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type GearTwoQuery = { readonly gearTwoContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
-
 type GearThreeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type GearThreeQuery = { readonly gearThreeContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
+
+type GearTwoQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type GearTwoQuery = { readonly gearTwoContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
 }

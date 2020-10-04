@@ -5,6 +5,8 @@ import { Flex, Box } from '@chakra-ui/core';
 import Image from 'gatsby-image';
 import { Fade } from 'react-awesome-reveal';
 
+import SnapScrollChild from '../components/SnapScrollChild';
+
 const ShadowedImage = styled(Image)`
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.3);
 `;
@@ -25,30 +27,32 @@ const Discog = () => {
     }
   `);
   return (
-    <Fade triggerOnce>
-      <Flex
-        minHeight="calc(100vh - 136px)"
-        alignItems="center"
-        justifyContent="center"
-        flexWrap="wrap"
-        margin="20px 0"
-      >
-        {discogData.allFile.nodes.map((imageNode) => {
-          if (!imageNode?.childImageSharp?.fluid)
-            throw new Error(`Image query for discog images failed`);
-          return (
-            <Box
-              width={{ base: '65%', md: '35%', lg: '170px' }}
-              height="100%"
-              key={imageNode.id}
-              margin="10px"
-            >
-              <ShadowedImage fluid={imageNode?.childImageSharp?.fluid} />
-            </Box>
-          );
-        })}
-      </Flex>
-    </Fade>
+    <SnapScrollChild>
+      <Fade triggerOnce>
+        <Flex
+          minHeight="calc(100vh - 136px)"
+          alignItems="center"
+          justifyContent="center"
+          flexWrap="wrap"
+          margin="20px 0"
+        >
+          {discogData.allFile.nodes.map((imageNode) => {
+            if (!imageNode?.childImageSharp?.fluid)
+              throw new Error(`Image query for discog images failed`);
+            return (
+              <Box
+                width={{ base: '65%', md: '35%', lg: '170px' }}
+                height="100%"
+                key={imageNode.id}
+                margin="10px"
+              >
+                <ShadowedImage fluid={imageNode?.childImageSharp?.fluid} />
+              </Box>
+            );
+          })}
+        </Flex>
+      </Fade>
+    </SnapScrollChild>
   );
 };
 

@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import Image from 'gatsby-image';
 
 import MaskingTape from '../../assets/images/section_header_vertical_masking_tape.png';
+import SnapScrollChild from '../SnapScrollChild';
 
 const UprightTextBox = styled(Box)`
   writing-mode: vertical-lr;
@@ -24,34 +25,42 @@ const SectionHeading = ({
   leftToRight: boolean;
 }) => {
   if (!image) return <div />;
+
   return (
-    <Flex
-      alignItems="center"
-      height={{ base: 'calc(100vh - 92px)', lg: 'calc(100vh - 136px)' }}
-      flexDirection={leftToRight ? 'row' : 'row-reverse'}
-      display={{ base: 'none', lg: 'flex' }}
-    >
-      <Box
-        bgImage={`url(${MaskingTape})`}
-        backgroundRepeat="no-repeat"
-        width="85px"
-        height="300px"
-        position="relative"
-        margin={leftToRight ? '0 30px 0 0' : '0 0 0 30px'}
+    <SnapScrollChild>
+      <Flex
+        alignItems="center"
+        height={{ base: 'calc(100vh - 92px)', lg: 'calc(100vh - 136px)' }}
+        flexDirection={leftToRight ? 'row' : 'row-reverse'}
+        display={{ base: 'none', lg: 'flex' }}
       >
-        <UprightTextBox position="absolute" top="20%" left="15%" opacity={0.8}>
-          <Heading fontSize="3xl" lineHeight={1.5}>
-            {title}
-          </Heading>
-        </UprightTextBox>
-      </Box>
-      <Box width="100%" maxHeight="100%" height="400px">
-        <Image
-          fluid={image}
-          style={{ maxHeight: '100%', borderRadius: '59px' }}
-        />
-      </Box>
-    </Flex>
+        <Box
+          bgImage={`url(${MaskingTape})`}
+          backgroundRepeat="no-repeat"
+          width="85px"
+          height="300px"
+          position="relative"
+          margin={leftToRight ? '0 30px 0 0' : '0 0 0 30px'}
+        >
+          <UprightTextBox
+            position="absolute"
+            top="20%"
+            left="15%"
+            opacity={0.8}
+          >
+            <Heading fontSize="3xl" lineHeight={1.5}>
+              {title}
+            </Heading>
+          </UprightTextBox>
+        </Box>
+        <Box width="100%" maxHeight="100%" height="400px">
+          <Image
+            fluid={image}
+            style={{ maxHeight: '100%', borderRadius: '59px' }}
+          />
+        </Box>
+      </Flex>
+    </SnapScrollChild>
   );
 };
 

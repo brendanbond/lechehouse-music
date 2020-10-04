@@ -4,7 +4,7 @@ import { Flex, Box } from '@chakra-ui/core';
 import RoundedImage from './RoundedImage';
 import VerticalDivider from './VerticalDivider';
 import HorizontalDivider from './HorizontalDivider';
-import { SnapScrollChild } from './styles';
+import SnapScrollChild from './SnapScrollChild';
 
 const SectionContentRegion = ({
   children,
