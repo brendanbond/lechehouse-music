@@ -12,14 +12,14 @@ export const wrapRootElement = ({ element }) => {
         styles={css`
           html,
           body {
-            scroll-snap-type: y mandatory;
+            scroll-snap-type: y proximity;
             scroll-padding: 136px;
           }
 
           @media only screen and (max-width: 991px) {
             html,
             body {
-              scroll-snap-type: y mandatory;
+              scroll-snap-type: y proximity;
               scroll-padding: 92px;
               -webkit-overflow-scrolling: touch;
               overflow: visible;
