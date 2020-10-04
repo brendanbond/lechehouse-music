@@ -21,6 +21,8 @@ export const wrapRootElement = ({ element }) => {
             body {
               scroll-snap-type: y mandatory;
               scroll-padding: 92px;
+              -webkit-overflow-scrolling: touch;
+              overflow: visible;
             }
           }
         `}
