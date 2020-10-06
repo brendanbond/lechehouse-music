@@ -4,7 +4,7 @@ import { Heading } from '@chakra-ui/core';
 
 import useMediaQuery from '../../hooks/useMediaQuery';
 
-const MenuItems = ({
+const MenuItem = ({
   children,
   to,
   onMenuItemClick,
@@ -40,4 +40,4 @@ const MenuItems = ({
   );
 };
 
-export default MenuItems;
+export default MenuItem;

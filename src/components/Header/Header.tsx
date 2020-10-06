@@ -3,7 +3,9 @@ import { Box, Flex } from '@chakra-ui/core';
 
 import Brand from '../Brand';
 import MaskingTape from '../../assets/images/header_masking_tape.png';
-import MenuItems from './MenuItems';
+import FacebookIconLink from '../FacebookIconLink';
+import InstagramIconLink from '../InstagramIconLink';
+import MenuItem from './MenuItem';
 
 const Header = () => {
   const [show, setShow] = React.useState(false);
@@ -54,18 +56,34 @@ const Header = () => {
           backgroundImage={{ base: '', lg: `url(${MaskingTape})` }}
           backgroundRepeat="no-repeat"
         >
-          <MenuItems to="about" onMenuItemClick={() => setShow(false)}>
+          <MenuItem to="about" onMenuItemClick={() => setShow(false)}>
             ABOUT
-          </MenuItems>
-          <MenuItems to="gear" onMenuItemClick={() => setShow(false)}>
+          </MenuItem>
+          <MenuItem to="gear" onMenuItemClick={() => setShow(false)}>
             GEAR
-          </MenuItems>
-          <MenuItems to="discog" onMenuItemClick={() => setShow(false)}>
+          </MenuItem>
+          <MenuItem to="discog" onMenuItemClick={() => setShow(false)}>
             DISCOG
-          </MenuItems>
-          <MenuItems to="booking" onMenuItemClick={() => setShow(false)}>
+          </MenuItem>
+          <MenuItem to="booking" onMenuItemClick={() => setShow(false)}>
             BOOKING
-          </MenuItems>
+          </MenuItem>
+          <Flex
+            opacity={0.85}
+            width="65px"
+            justifyContent="space-between"
+            alignItems="center"
+            css="a:first-child { margin-right: 10px }"
+          >
+            <FacebookIconLink
+              to="https://facebook.com/lechehousemusic"
+              width="25px"
+            />
+            <InstagramIconLink
+              to="https://instagram.com/lechehousemusic"
+              width="25px"
+            />
+          </Flex>
         </Box>
       </Flex>
     </Box>

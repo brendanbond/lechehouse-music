@@ -3,7 +3,8 @@ import { Flex, Box, Heading } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
 
-import MaskingTape from '../../assets/images/section_header_vertical_masking_tape.png';
+import VerticalMaskingTape from '../../assets/images/section_header_vertical_masking_tape.png';
+import HorizontalMaskingTape from '../../assets/images/section_header_horizontal_masking_tape.png';
 import SnapScrollChild from '../SnapScrollChild';
 
 const UprightTextBox = styled(Box)`
@@ -31,16 +32,20 @@ const SectionHeading = ({
       <Flex
         alignItems="center"
         height={{ base: 'calc(100vh - 92px)', lg: 'calc(100vh - 136px)' }}
-        flexDirection={leftToRight ? 'row' : 'row-reverse'}
-        display={{ base: 'none', lg: 'flex' }}
+        flexDirection={{
+          base: 'column',
+          lg: leftToRight ? 'row' : 'row-reverse',
+        }}
+        justifyContent="center"
       >
         <Box
-          bgImage={`url(${MaskingTape})`}
+          bgImage={`url(${VerticalMaskingTape})`}
           backgroundRepeat="no-repeat"
           width="85px"
           height="300px"
           position="relative"
           margin={leftToRight ? '0 30px 0 0' : '0 0 0 30px'}
+          display={{ base: 'none', lg: 'block' }}
         >
           <UprightTextBox
             position="absolute"
@@ -53,11 +58,30 @@ const SectionHeading = ({
             </Heading>
           </UprightTextBox>
         </Box>
-        <Box width="100%" maxHeight="100%" height="400px">
+        <Box
+          width="100%"
+          maxHeight="100%"
+          height={{ base: 'auto', lg: '400px' }}
+          position="relative"
+        >
           <Image
             fluid={image}
             style={{ maxHeight: '100%', borderRadius: '59px' }}
           />
+          <Box
+            position="absolute"
+            width="300px"
+            height="77px"
+            top="10px"
+            left="10px"
+            bgImage={`url(${HorizontalMaskingTape})`}
+            backgroundRepeat="no-repeat"
+            display={{ base: 'flex', lg: 'none' }}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Heading opacity={0.85}>{title}</Heading>
+          </Box>
         </Box>
       </Flex>
     </SnapScrollChild>
