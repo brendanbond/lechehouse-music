@@ -45,7 +45,7 @@ const Booking = () => {
           </FormControl>
           <FormControl marginBottom="10px" isRequired>
             <FormLabel htmlFor="email">Email</FormLabel>
-            <Input id="email" name="email" placeholder="Email" />
+            <Input type="email" id="email" name="email" placeholder="Email" />
           </FormControl>
           <FormControl marginBottom="10px" isRequired>
             <FormLabel htmlFor="message">Message</FormLabel>
