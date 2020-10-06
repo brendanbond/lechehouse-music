@@ -41,15 +41,19 @@ const Booking = () => {
           <input type="hidden" name="form-name" value="contact" />
           <FormControl marginBottom="10px">
             <FormLabel htmlFor="name">Name</FormLabel>
-            <Input id="name" placeholder="Name" />
+            <Input id="name" name="name" placeholder="Name" />
           </FormControl>
           <FormControl marginBottom="10px" isRequired>
             <FormLabel htmlFor="email">Email</FormLabel>
-            <Input id="email" placeholder="Email" />
+            <Input id="email" name="email" placeholder="Email" />
           </FormControl>
           <FormControl marginBottom="10px" isRequired>
             <FormLabel htmlFor="message">Message</FormLabel>
-            <Textarea id="message" placeholder="Get in touch..." />
+            <Textarea
+              id="message"
+              name="message"
+              placeholder="Get in touch..."
+            />
           </FormControl>
           <Button variantColor="gray" type="submit">
             Submit
