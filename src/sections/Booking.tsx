@@ -32,7 +32,13 @@ const Booking = () => {
         borderColor="betoBlue"
         borderLength={{ base: '200px', lg: '350px' }}
       >
-        <form>
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <FormControl marginBottom="10px">
             <FormLabel htmlFor="name">Name</FormLabel>
             <Input id="name" placeholder="Name" />
