@@ -2497,6 +2497,11 @@ type BookingQueryVariables = Exact<{ [key: string]: never; }>;
 
 type BookingQuery = { readonly bookingContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
+type GearFiveQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type GearFiveQuery = { readonly gearFiveContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
+
 type DiscogQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -2504,11 +2509,6 @@ type DiscogQuery = { readonly allFile: { readonly nodes: ReadonlyArray<(
       Pick<File, 'id'>
       & { readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }
     )> } };
-
-type GearFiveQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type GearFiveQuery = { readonly gearFiveContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
 type GearFourQueryVariables = Exact<{ [key: string]: never; }>;
 
