@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <Box
-      bgImage="linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,228,189,1) 100%)"
+      bgImage="linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(212,211,210,1) 100%)"
       boxShadow="0px 4px 14px 0px rgba(0, 0, 0, 0.3);"
       width="100%"
       position="fixed"

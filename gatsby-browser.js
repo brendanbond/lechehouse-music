@@ -30,7 +30,7 @@ export const wrapRootElement = ({ element }) => {
       <Global
         styles={css`
           body {
-            background-color: #fff1de;
+            background-color: #f6f6f6;
           }
         `}
       />
