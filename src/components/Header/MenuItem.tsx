@@ -43,7 +43,7 @@ const MenuItem = ({
       onClick={handleClick}
     >
       {external ? (
-        <a href={to} target="_blank">
+        <a href={to} target="_blank" rel="noreferrer">
           {children}
         </a>
       ) : (
