@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Flex, Box } from '@chakra-ui/core';
 import Image from 'gatsby-image';
 import { Fade } from 'react-awesome-reveal';
+import { use100vh } from 'react-div-100vh';
 
 import SnapScrollChild from '../components/SnapScrollChild';
 
@@ -26,11 +27,13 @@ const Discog = () => {
       }
     }
   `);
+  const height = use100vh();
+
   return (
     <SnapScrollChild>
       <Fade triggerOnce>
         <Flex
-          minHeight="calc(100vh - 136px)"
+          minHeight={`calc(${height}px - 136px)`}
           alignItems="center"
           justifyContent="center"
           flexWrap="wrap"

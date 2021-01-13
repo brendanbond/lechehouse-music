@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, Box } from '@chakra-ui/core';
+import { use100vh } from 'react-div-100vh';
 
 import RoundedImage from './RoundedImage';
 import VerticalDivider from './VerticalDivider';
@@ -27,6 +28,7 @@ const SectionContentRegion = ({
       };
 }) => {
   if (!image) throw new Error('Section content region image not found');
+  const height = use100vh();
 
   return (
     <SnapScrollChild>
@@ -37,7 +39,10 @@ const SectionContentRegion = ({
           base: 'column',
           lg: leftToRight ? 'row' : 'row-reverse',
         }}
-        height={{ base: 'calc(100vh - 93px)', lg: 'calc(100vh - 152px)' }}
+        height={{
+          base: `calc(${height}px - 93px)`,
+          lg: `calc(${height}px - 152px)`,
+        }}
         width="100%"
       >
         <Flex

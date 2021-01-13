@@ -2,6 +2,7 @@ import React from 'react';
 import { Flex, Box, Heading } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
+import { use100vh } from 'react-div-100vh';
 
 import VerticalMaskingTape from '../../assets/images/section_header_vertical_masking_tape.png';
 import HorizontalMaskingTape from '../../assets/images/section_header_horizontal_masking_tape.png';
@@ -25,13 +26,17 @@ const SectionHeading = ({
   title: string;
   leftToRight: boolean;
 }) => {
+  const height = use100vh();
   if (!image) return <div />;
 
   return (
     <SnapScrollChild>
       <Flex
         alignItems="center"
-        height={{ base: 'calc(100vh - 92px)', lg: 'calc(100vh - 136px)' }}
+        height={{
+          base: `calc(${height}px - 92px)`,
+          lg: `calc(${height}px - 136px)`,
+        }}
         flexDirection={{
           base: 'column',
           lg: leftToRight ? 'row' : 'row-reverse',

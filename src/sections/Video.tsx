@@ -1,14 +1,20 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { Flex } from '@chakra-ui/core';
+import { use100vh } from 'react-div-100vh';
 
 const Video = () => {
+  const height = use100vh();
+
   return (
     <Fade triggerOnce>
       <Flex
         justifyContent="center"
         alignItems="center"
-        height={{ base: 'calc(100vh - 93px)', lg: 'calc(100vh - 152px)' }}
+        height={{
+          base: `calc(${height}px - 93px)`,
+          lg: `calc(${height}px - 152px)`,
+        }}
         width="100%"
         style={{ scrollSnapAlign: 'start' }}
       >
