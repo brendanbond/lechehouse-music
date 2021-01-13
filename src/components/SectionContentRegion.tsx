@@ -37,7 +37,7 @@ const SectionContentRegion = ({
           base: 'column',
           lg: leftToRight ? 'row' : 'row-reverse',
         }}
-        height={{ base: 'calc(100vh - 92px)', lg: 'calc(100vh - 136px)' }}
+        height={{ base: 'calc(100vh - 93px)', lg: 'calc(100vh - 152px)' }}
         width="100%"
       >
         <Flex

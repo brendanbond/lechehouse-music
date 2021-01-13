@@ -7,7 +7,7 @@ import SocialIcons from './SocialIcons';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Box id="lechehouse-content">
+    <Box id="lechehouse-content" overflow="hidden" height="100vh">
       <Helmet>
         <link
           rel="stylesheet"
@@ -17,14 +17,19 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </Helmet>
 
       <Box
-        maxWidth="full"
-        margin={{ base: '92px auto 0 auto', lg: '136px auto 0 auto' }}
+        id="lechehouse-scroll"
+        margin={{ base: '93px auto 0 auto', lg: '152px auto 0 auto' }}
         padding="0 24px"
+        overflow="auto"
+        height="calc(100vh - 92px)"
+        style={{ scrollSnapType: 'y mandatory' }}
       >
-        {children}
+        <Box maxWidth="full" margin="0 auto">
+          {children}
+        </Box>
+        <SocialIcons />
       </Box>
       <Header />
-      <SocialIcons />
     </Box>
   );
 };

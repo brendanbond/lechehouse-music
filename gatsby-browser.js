@@ -8,25 +8,6 @@ export const wrapRootElement = ({ element }) => {
   return (
     <ThemeProvider theme={betoTheme}>
       <CSSReset />
-      {/* <Global
-        styles={css`
-          html,
-          body {
-            scroll-snap-type: y proximity;
-            scroll-padding: 136px;
-          }
-
-          @media only screen and (max-width: 991px) {
-            html,
-            body {
-              scroll-snap-type: y proximity;
-              scroll-padding: 92px;
-              -webkit-overflow-scrolling: touch;
-              overflow: visible;
-            }
-          }
-        `}
-      /> */}
       <Global
         styles={css`
           body {

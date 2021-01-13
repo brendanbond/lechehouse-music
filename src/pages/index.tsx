@@ -13,15 +13,11 @@ import GearFour from '../sections/GearFour';
 import GearFive from '../sections/GearFive';
 import Discog from '../sections/Discog';
 import Booking from '../sections/Booking';
+import Video from '../sections/Video';
 
 const HomePage = ({ data }: { data: GatsbyTypes.HomePageQuery }) => {
   return (
     <Layout>
-      {/* <SectionHeading
-            leftToRight={true}
-            image={imageData.aboutHeader.fluid}
-            title="ABOUT"
-          /> */}
       <ScrollElement name="about" />
       <About />
       <ScrollElement name="gear" />
@@ -35,16 +31,23 @@ const HomePage = ({ data }: { data: GatsbyTypes.HomePageQuery }) => {
       <GearThree />
       <GearFour />
       <GearFive />
-      <ScrollElement name="discog" />
+      <ScrollElement name="videos" />
       <SectionHeading
         leftToRight={true}
+        image={data?.videoHeader?.childImageSharp?.fluid}
+        title="VIDEOS"
+      />
+      <Video />
+      <ScrollElement name="discog" />
+      <SectionHeading
+        leftToRight={false}
         image={data?.discogHeader?.childImageSharp?.fluid}
         title="DISCOG"
       />
       <Discog />
       <ScrollElement name="booking" />
       <SectionHeading
-        leftToRight={false}
+        leftToRight={true}
         image={data?.bookingHeader?.childImageSharp?.fluid}
         title="BOOKING"
       />
@@ -77,6 +80,13 @@ export const query = graphql`
       }
     }
     bookingHeader: file(relativePath: { eq: "booking_banner.png" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    videoHeader: file(relativePath: { eq: "video_banner.png" }) {
       childImageSharp {
         fluid(quality: 100) {
           ...GatsbyImageSharpFluid_withWebp

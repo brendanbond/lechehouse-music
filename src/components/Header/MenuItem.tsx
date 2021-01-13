@@ -1,6 +1,7 @@
 import React from 'react';
 import { scroller } from 'react-scroll';
 import { Heading } from '@chakra-ui/core';
+import { navigate } from 'gatsby';
 
 import useMediaQuery from '../../hooks/useMediaQuery';
 
@@ -8,19 +9,25 @@ const MenuItem = ({
   children,
   to,
   onMenuItemClick,
+  external = false,
 }: {
   children: React.ReactNode;
   to: string;
   onMenuItemClick: () => void;
+  external?: boolean;
 }) => {
   const isSmallScreenWidth = useMediaQuery('(max-width: 768px)');
-  const offset = isSmallScreenWidth ? -92 : -136;
+  const offset = isSmallScreenWidth ? -93 : -152;
   const handleClick = () => {
     onMenuItemClick();
+    if (external) {
+      return;
+    }
     scroller.scrollTo(to, {
       duration: 1500,
       delay: 100,
-      smooth: true,
+      smooth: false,
+      containerId: 'lechehouse-scroll',
       offset,
     });
   };
@@ -35,7 +42,13 @@ const MenuItem = ({
       opacity={0.85}
       onClick={handleClick}
     >
-      {children}
+      {external ? (
+        <a href={to} target="_blank">
+          {children}
+        </a>
+      ) : (
+        children
+      )}
     </Heading>
   );
 };

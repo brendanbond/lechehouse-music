@@ -11,6 +11,7 @@ const Header = () => {
 
   return (
     <Box
+      minHeight={{ base: '93px', lg: '152px' }}
       bgImage="linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(212,211,210,1) 100%)"
       boxShadow="0px 4px 14px 0px rgba(0, 0, 0, 0.3);"
       width="100%"
@@ -59,6 +60,16 @@ const Header = () => {
           </MenuItem>
           <MenuItem to="gear" onMenuItemClick={() => setShow(false)}>
             GEAR
+          </MenuItem>
+          <MenuItem
+            to="https://lechehousemusic.bandcamp.com"
+            onMenuItemClick={() => setShow(false)}
+            external
+          >
+            MERCH
+          </MenuItem>
+          <MenuItem to="videos" onMenuItemClick={() => setShow(false)}>
+            VIDEOS
           </MenuItem>
           <MenuItem to="discog" onMenuItemClick={() => setShow(false)}>
             DISCOG

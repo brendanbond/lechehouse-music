@@ -13,14 +13,13 @@ const SocialIcons = () => {
       justifyContent="center"
       alignItems="center"
       position="sticky"
-      bottom="40px"
+      bottom={{ base: '40px', lg: '80px' }}
     >
       <Flex
         width="253px"
         height="81px"
-        justifyContent="space-around"
+        justifyContent="space-between"
         alignItems="center"
-        css="a:first-child { margin-right: 10px }"
         padding="1rem 2rem"
         backgroundImage={{ base: '', lg: `url(${MaskingTape})` }}
         backgroundRepeat="no-repeat"
