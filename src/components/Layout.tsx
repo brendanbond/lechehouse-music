@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Box } from '@chakra-ui/core';
 
 import Header from './Header';
+import SocialIcons from './SocialIcons';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -23,6 +24,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </Box>
       <Header />
+      <SocialIcons />
     </Box>
   );
 };

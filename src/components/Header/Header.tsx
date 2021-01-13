@@ -3,8 +3,6 @@ import { Box, Flex } from '@chakra-ui/core';
 
 import Brand from '../Brand';
 import MaskingTape from '../../assets/images/header_masking_tape.png';
-import FacebookIconLink from '../FacebookIconLink';
-import InstagramIconLink from '../InstagramIconLink';
 import MenuItem from './MenuItem';
 
 const Header = () => {
@@ -68,22 +66,6 @@ const Header = () => {
           <MenuItem to="booking" onMenuItemClick={() => setShow(false)}>
             BOOKING
           </MenuItem>
-          <Flex
-            opacity={0.85}
-            width="65px"
-            justifyContent="space-between"
-            alignItems="center"
-            css="a:first-child { margin-right: 10px }"
-          >
-            <FacebookIconLink
-              to="https://facebook.com/lechehousemusic"
-              width="25px"
-            />
-            <InstagramIconLink
-              to="https://instagram.com/lechehousemusic"
-              width="25px"
-            />
-          </Flex>
         </Box>
       </Flex>
     </Box>
