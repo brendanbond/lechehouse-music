@@ -75,7 +75,7 @@ const SectionContentRegion = ({
         >
           <Box
             width="85%"
-            fontSize={{ base: '3.25vw', sm: '1.75vw', lg: '1.17rem' }}
+            fontSize={{ base: '2.75vw', sm: '1.75vw', lg: '1.17rem' }}
             textAlign={{ base: 'center', lg: leftToRight ? 'left' : 'right' }}
           >
             {children}
