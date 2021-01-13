@@ -2487,30 +2487,15 @@ type BrandQueryVariables = Exact<{ [key: string]: never; }>;
 
 type BrandQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
-type AboutQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type AboutQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'about'>> }>, readonly aboutContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
-
 type BookingQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type BookingQuery = { readonly bookingContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
-type GearFiveQueryVariables = Exact<{ [key: string]: never; }>;
+type AboutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type GearFiveQuery = { readonly gearFiveContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
-
-type GearFourQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type GearFourQuery = { readonly gearFourContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
-
-type GearOneQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type GearOneQuery = { readonly gearOneContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
+type AboutQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'about'>> }>, readonly aboutContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
 type DiscogQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -2524,6 +2509,21 @@ type GearThreeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type GearThreeQuery = { readonly gearThreeContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
+
+type GearFiveQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type GearFiveQuery = { readonly gearFiveContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
+
+type GearOneQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type GearOneQuery = { readonly gearOneContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
+
+type GearFourQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type GearFourQuery = { readonly gearFourContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
 type GearTwoQueryVariables = Exact<{ [key: string]: never; }>;
 
