@@ -22,6 +22,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         padding="0 24px"
         overflow="auto"
         height="calc(100vh - 92px)"
+        minHeight="-webkit-fill-available"
         style={{ scrollSnapType: 'y mandatory' }}
       >
         <Box maxWidth="full" margin="0 auto">

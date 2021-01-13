@@ -1,7 +1,6 @@
 import React from 'react';
 import { scroller } from 'react-scroll';
 import { Heading } from '@chakra-ui/core';
-import { navigate } from 'gatsby';
 
 import useMediaQuery from '../../hooks/useMediaQuery';
 
