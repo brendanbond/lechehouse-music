@@ -21,8 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         margin={{ base: '93px auto 0 auto', lg: '152px auto 0 auto' }}
         padding="0 24px"
         overflow="auto"
-        height="calc(100vh - 92px)"
-        minHeight="-webkit-fill-available"
+        minHeight="calc(100vh - 92px)"
         style={{ scrollSnapType: 'y mandatory' }}
       >
         <Box maxWidth="full" margin="0 auto">

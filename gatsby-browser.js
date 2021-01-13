@@ -10,6 +10,9 @@ export const wrapRootElement = ({ element }) => {
       <CSSReset />
       <Global
         styles={css`
+          html {
+            height: -webkit-fill-available;
+          }
           body {
             background-color: #e6e6e6;
           }
