@@ -41,7 +41,7 @@ const Booking = () => {
       }}
       style={{ scrollSnapAlign: 'start' }}
     >
-      <Box width="200px" margin="10px auto">
+      <Box width="150px" margin="10px auto">
         <Image fluid={imageData.bookingContent.childImageSharp.fluid} />
       </Box>
       <form

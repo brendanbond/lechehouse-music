@@ -2492,11 +2492,6 @@ type AboutQueryVariables = Exact<{ [key: string]: never; }>;
 
 type AboutQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'about'>> }>, readonly aboutContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
-type BookingQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BookingQuery = { readonly bookingContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
-
 type DiscogQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -2509,6 +2504,11 @@ type GearFiveQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type GearFiveQuery = { readonly gearFiveContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
+
+type BookingQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BookingQuery = { readonly bookingContent: Maybe<{ readonly childImageSharp: Maybe<{ readonly fluid: Maybe<GatsbyImageSharpFluid_withWebpFragment> }> }> };
 
 type GearFourQueryVariables = Exact<{ [key: string]: never; }>;
 

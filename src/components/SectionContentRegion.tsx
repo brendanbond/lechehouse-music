@@ -46,7 +46,7 @@ const SectionContentRegion = ({
       style={{ scrollSnapAlign: 'start' }}
     >
       <Flex
-        width={{ base: '200px', lg: '50%' }}
+        width={{ base: '150px', lg: '50%' }}
         justifyContent={leftToRight ? 'flex-end' : 'flex-start'}
       >
         <Box width={{ base: '100%', lg: '85%' }}>
