@@ -34,7 +34,7 @@ const Booking = () => {
       flexDirection="column"
       justifyContent={{ base: 'flex-start', lg: 'center' }}
       alignItems="center"
-      paddingTop={{ base: '40px', lg: 0 }}
+      paddingTop="10px"
       height={{
         base: `calc(${height}px - 93px)`,
         lg: `calc(${height}px - 152px)`,
