@@ -5,10 +5,12 @@ import {
   Input,
   Textarea,
   Button,
+  Box,
+  Flex,
 } from '@chakra-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
-
-import SectionContentRegion from '../components/SectionContentRegion';
+import Image from 'gatsby-image';
+import { use100vh } from 'react-div-100vh';
 
 const Booking = () => {
   const imageData = useStaticQuery<GatsbyTypes.BookingQuery>(graphql`
@@ -22,14 +24,26 @@ const Booking = () => {
       }
     }
   `);
+  const height = use100vh();
+  if (!imageData.bookingContent?.childImageSharp?.fluid)
+    throw new Error('Cannot find booking logo image');
 
   return (
-    <SectionContentRegion
-      leftToRight={true}
-      image={imageData?.bookingContent?.childImageSharp?.fluid}
-      borderColor="betoBlue"
-      borderLength={{ base: '200px', lg: '350px' }}
+    <Flex
+      width="100%"
+      flexDirection="column"
+      justifyContent={{ base: 'flex-start', lg: 'center' }}
+      alignItems="center"
+      paddingTop={{ base: '40px', lg: 0 }}
+      height={{
+        base: `calc(${height}px - 93px)`,
+        lg: `calc(${height}px - 152px)`,
+      }}
+      style={{ scrollSnapAlign: 'start' }}
     >
+      <Box width="200px" margin="10px auto">
+        <Image fluid={imageData.bookingContent.childImageSharp.fluid} />
+      </Box>
       <form
         name="contact"
         method="post"
@@ -49,11 +63,13 @@ const Booking = () => {
           <FormLabel htmlFor="message">Message</FormLabel>
           <Textarea id="message" name="message" placeholder="Get in touch..." />
         </FormControl>
-        <Button variantColor="gray" type="submit">
-          Submit
-        </Button>
+        <Flex alignItems="center" justifyContent="center">
+          <Button margin="10px auto" variantColor="gray" type="submit">
+            Submit
+          </Button>
+        </Flex>
       </form>
-    </SectionContentRegion>
+    </Flex>
   );
 };
 
