@@ -7,7 +7,6 @@ import {
   Button,
 } from '@chakra-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Fade } from 'react-awesome-reveal';
 
 import SectionContentRegion from '../components/SectionContentRegion';
 
@@ -25,42 +24,36 @@ const Booking = () => {
   `);
 
   return (
-    <Fade triggerOnce>
-      <SectionContentRegion
-        leftToRight={true}
-        image={imageData?.bookingContent?.childImageSharp?.fluid}
-        borderColor="betoBlue"
-        borderLength={{ base: '200px', lg: '350px' }}
+    <SectionContentRegion
+      leftToRight={true}
+      image={imageData?.bookingContent?.childImageSharp?.fluid}
+      borderColor="betoBlue"
+      borderLength={{ base: '200px', lg: '350px' }}
+    >
+      <form
+        name="contact"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
-        <form
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <FormControl marginBottom="10px">
-            <FormLabel htmlFor="name">Name</FormLabel>
-            <Input id="name" name="name" placeholder="Name" />
-          </FormControl>
-          <FormControl marginBottom="10px" isRequired>
-            <FormLabel htmlFor="email">Email</FormLabel>
-            <Input type="email" id="email" name="email" placeholder="Email" />
-          </FormControl>
-          <FormControl marginBottom="10px" isRequired>
-            <FormLabel htmlFor="message">Message</FormLabel>
-            <Textarea
-              id="message"
-              name="message"
-              placeholder="Get in touch..."
-            />
-          </FormControl>
-          <Button variantColor="gray" type="submit">
-            Submit
-          </Button>
-        </form>
-      </SectionContentRegion>
-    </Fade>
+        <input type="hidden" name="form-name" value="contact" />
+        <FormControl marginBottom="10px">
+          <FormLabel htmlFor="name">Name</FormLabel>
+          <Input id="name" name="name" placeholder="Name" />
+        </FormControl>
+        <FormControl marginBottom="10px" isRequired>
+          <FormLabel htmlFor="email">Email</FormLabel>
+          <Input type="email" id="email" name="email" placeholder="Email" />
+        </FormControl>
+        <FormControl marginBottom="10px" isRequired>
+          <FormLabel htmlFor="message">Message</FormLabel>
+          <Textarea id="message" name="message" placeholder="Get in touch..." />
+        </FormControl>
+        <Button variantColor="gray" type="submit">
+          Submit
+        </Button>
+      </form>
+    </SectionContentRegion>
   );
 };
 
