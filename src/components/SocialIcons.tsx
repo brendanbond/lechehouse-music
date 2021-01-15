@@ -13,7 +13,7 @@ const SocialIcons = () => {
       justifyContent="center"
       alignItems="center"
       position="sticky"
-      bottom={{ base: 0, lg: '80px' }}
+      bottom={{ base: 0, lg: '40px' }}
     >
       <Flex
         width="253px"
